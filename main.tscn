@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://3phfn64o4oyy" path="res://sprites/bg.png" id="4_s1qh0"]
 [ext_resource type="Script" path="res://background.gd" id="5_04mwg"]
 [ext_resource type="PackedScene" uid="uid://d2fiowrfipbxh" path="res://shop.tscn" id="6_gphmm"]
-[ext_resource type="AudioStream" uid="uid://duogsfngiq7np" path="res://music/mus_interesting.ogg" id="8_skwym"]
+[ext_resource type="AudioStream" uid="uid://duogsfngiq7np" path="res://music/interesting.ogg" id="8_skwym"]
 
 [sub_resource type="Animation" id="Animation_xtipx"]
 resource_name = "RESET"
@@ -75,10 +75,19 @@ libraries = {
 "": SubResource("AnimationLibrary_30oc4")
 }
 
-[node name="shop" parent="." instance=ExtResource("6_gphmm")]
-position = Vector2(768, 72)
-
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_skwym")
 volume_db = -3.0
 autoplay = true
+
+[node name="shopwindow" type="Window" parent="."]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+title = "the epic shop"
+initial_position = 1
+unresizable = true
+always_on_top = true
+transparent = true
+theme = ExtResource("1_kly6j")
+
+[node name="shop" parent="shopwindow" instance=ExtResource("6_gphmm")]
