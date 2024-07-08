@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://crr5rtk54wrfu"]
+
+[ext_resource type="PackedScene" uid="uid://cgbdxe657nlbg" path="res://minigames/aplayer.tscn" id="1_ecm6s"]
+[ext_resource type="Script" path="res://minigames/aminigame.gd" id="1_knpd3"]
+[ext_resource type="PackedScene" uid="uid://blxrq2e1knbpq" path="res://minigames/awall.tscn" id="2_1kg41"]
+[ext_resource type="PackedScene" uid="uid://r2x05g4gxh6f" path="res://minigames/atarget.tscn" id="2_ipk08"]
+[ext_resource type="PackedScene" uid="uid://ci8fxwc4y752a" path="res://minigames/abox.tscn" id="3_oag1t"]
+
+[node name="aminigame" type="Node2D"]
+script = ExtResource("1_knpd3")
+
+[node name="awall" parent="." instance=ExtResource("2_1kg41")]
+
+[node name="awall2" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(32, 0)
+
+[node name="awall3" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(64, 0)
+
+[node name="awall4" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(96, 0)
+
+[node name="awall5" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(96, 32)
+
+[node name="awall6" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(96, 64)
+
+[node name="awall7" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(128, 64)
+
+[node name="awall8" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(160, 64)
+
+[node name="awall9" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(160, 96)
+
+[node name="awall10" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(160, 128)
+
+[node name="awall11" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(160, 160)
+
+[node name="awall12" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(128, 160)
+
+[node name="awall13" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(96, 160)
+
+[node name="awall14" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(96, 192)
+
+[node name="awall15" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(64, 192)
+
+[node name="awall16" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(32, 192)
+
+[node name="awall17" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(0, 192)
+
+[node name="awall18" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(0, 160)
+
+[node name="awall19" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(0, 128)
+
+[node name="awall20" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(0, 96)
+
+[node name="awall21" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(0, 64)
+
+[node name="awall22" parent="." instance=ExtResource("2_1kg41")]
+position = Vector2(0, 32)
+
+[node name="atarget" parent="." instance=ExtResource("2_ipk08")]
+position = Vector2(64, 32)
+
+[node name="atarget2" parent="." instance=ExtResource("2_ipk08")]
+position = Vector2(32, 96)
+
+[node name="abox" parent="." instance=ExtResource("3_oag1t")]
+position = Vector2(32, 96)
+
+[node name="abox2" parent="." instance=ExtResource("3_oag1t")]
+position = Vector2(96, 128)
+
+[node name="aplayer" parent="." instance=ExtResource("1_ecm6s")]
+position = Vector2(64, 96)

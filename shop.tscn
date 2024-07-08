@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2fiowrfipbxh"]
+
+[ext_resource type="Script" path="res://shop.gd" id="1_qja85"]
+[ext_resource type="Texture2D" uid="uid://w1u0f2v7lrop" path="res://sprites/thiscoolasstriangle.png" id="1_t0gyx"]
+[ext_resource type="Texture2D" uid="uid://dfeq4o371cmkx" path="res://sprites/shopbg.png" id="2_joubs"]
+[ext_resource type="Theme" uid="uid://hmw2c6ssw4h6" path="res://theme.tres" id="3_kc7kh"]
+
+[node name="shop" type="Node2D"]
+script = ExtResource("1_qja85")
+
+[node name="background" type="NinePatchRect" parent="."]
+offset_left = -16.0
+offset_top = -64.0
+texture = ExtResource("2_joubs")
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="text" type="RichTextLabel" parent="."]
+offset_top = -56.0
+offset_right = 400.0
+theme = ExtResource("3_kc7kh")
+bbcode_enabled = true
+text = "[font_size=32][rainbow freq=0.2 sat=0.6][wave]the epic shop"
+
+[node name="example" type="Button" parent="."]
+offset_right = 142.0
+offset_bottom = 40.0
+theme = ExtResource("3_kc7kh")
+disabled = true
+text = "explodes"
+icon = ExtResource("1_t0gyx")

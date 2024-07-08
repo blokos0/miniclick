@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgbdxe657nlbg"]
+
+[ext_resource type="Texture2D" uid="uid://dp2m5xlpf4tqh" path="res://sprites/aplayer.png" id="1_0h0ej"]
+[ext_resource type="Script" path="res://minigames/aplayer.gd" id="1_ly3ys"]
+
+[node name="aplayer" type="Node2D"]
+script = ExtResource("1_ly3ys")
+
+[node name="sprite2d" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_0h0ej")

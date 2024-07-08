@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://blxrq2e1knbpq"]
+
+[ext_resource type="Texture2D" uid="uid://btg54lumoteo8" path="res://sprites/awall.png" id="1_663uu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_or3vp"]
+size = Vector2(28, 28)
+
+[node name="awall" type="Node2D"]
+
+[node name="sprite2d" type="Sprite2D" parent="."]
+texture = ExtResource("1_663uu")
+centered = false
+
+[node name="wallarea" type="Area2D" parent="."]
+monitoring = false
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="wallarea"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_or3vp")

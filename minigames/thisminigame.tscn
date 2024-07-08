@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=3 uid="uid://s16fbdhml4a"]
+
+[ext_resource type="Texture2D" uid="uid://w1u0f2v7lrop" path="res://sprites/thiscoolasstriangle.png" id="1_h4hnv"]
+[ext_resource type="Script" path="res://minigames/thisminigame.gd" id="1_r32ws"]
+[ext_resource type="Texture2D" uid="uid://efmm2ldjcf3r" path="res://sprites/thisarrow.png" id="2_b4v34"]
+[ext_resource type="Texture2D" uid="uid://d0lc3hkn2opac" path="res://sprites/thiscircle.png" id="3_7ysgr"]
+
+[sub_resource type="Animation" id="Animation_06dnb"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 112)]
+}
+
+[sub_resource type="Animation" id="Animation_8fufv"]
+resource_name = "movearound"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Vector2(-96, 112), Vector2(96, 112), Vector2(-96, 112)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uu7hu"]
+_data = {
+"RESET": SubResource("Animation_06dnb"),
+"movearound": SubResource("Animation_8fufv")
+}
+
+[sub_resource type="Animation" id="Animation_3cggu"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xfbti"]
+resource_name = "boom"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jijxp"]
+_data = {
+"RESET": SubResource("Animation_3cggu"),
+"boom": SubResource("Animation_xfbti")
+}
+
+[node name="thisminigame" type="Node2D"]
+script = ExtResource("1_r32ws")
+
+[node name="thiscoolasstriangle" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_h4hnv")
+
+[node name="thisarrow" type="Sprite2D" parent="."]
+position = Vector2(0, 112)
+scale = Vector2(2, 2)
+texture = ExtResource("2_b4v34")
+
+[node name="animationplayer" type="AnimationPlayer" parent="thisarrow"]
+libraries = {
+"": SubResource("AnimationLibrary_uu7hu")
+}
+
+[node name="thiscircle" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("3_7ysgr")
+
+[node name="animationplayer" type="AnimationPlayer" parent="thiscircle"]
+libraries = {
+"": SubResource("AnimationLibrary_jijxp")
+}
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]

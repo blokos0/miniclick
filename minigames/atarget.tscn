@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://r2x05g4gxh6f"]
+
+[ext_resource type="Texture2D" uid="uid://dnaagtgvywjkm" path="res://sprites/atarget.png" id="1_0ot4r"]
+[ext_resource type="Script" path="res://minigames/atarget.gd" id="1_ctr7b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3e410"]
+size = Vector2(28, 28)
+
+[node name="atarget" type="Node2D"]
+script = ExtResource("1_ctr7b")
+
+[node name="sprite2d" type="Sprite2D" parent="."]
+texture = ExtResource("1_0ot4r")
+centered = false
+
+[node name="targetarea" type="Area2D" parent="."]
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="targetarea"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_3e410")

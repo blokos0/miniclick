@@ -1,0 +1,217 @@
+[gd_scene load_steps=11 format=3 uid="uid://klvn6tanhmws"]
+
+[ext_resource type="Script" path="res://minigames/gambleminigame.gd" id="1_7sadh"]
+[ext_resource type="Texture2D" uid="uid://frkggsj32wfy" path="res://sprites/gambletile.png" id="1_pkayu"]
+[ext_resource type="AudioStream" uid="uid://bs4koux71hf7y" path="res://sounds/awwdangit.ogg" id="1_uv8gk"]
+[ext_resource type="Texture2D" uid="uid://qyehmrwfjahq" path="res://sprites/gambletile3.png" id="2_6ggmb"]
+[ext_resource type="Texture2D" uid="uid://dt2t565ealmyr" path="res://sprites/gambletile2.png" id="3_qh1wc"]
+[ext_resource type="Texture2D" uid="uid://cinpef3gqxsy1" path="res://sprites/gambletile1.png" id="4_vjsck"]
+
+[sub_resource type="Animation" id="Animation_cr1ca"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tile:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_pkayu")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tile:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("tile2:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_pkayu")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("tile2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("tile3:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_pkayu")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("tile3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sj03o"]
+resource_name = "anim"
+length = 1.36
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sfx")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_uv8gk")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tile:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_6ggmb"), ExtResource("3_qh1wc"), ExtResource("4_vjsck"), ExtResource("1_pkayu")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("tile:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(0, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0.368627, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("tile2:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_qh1wc"), ExtResource("4_vjsck"), ExtResource("2_6ggmb"), ExtResource("1_pkayu")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("tile2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(0, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0.368627, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("tile3:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_vjsck"), ExtResource("2_6ggmb"), ExtResource("3_qh1wc"), ExtResource("1_pkayu")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("tile3:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(0, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0.368627, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jujtv"]
+_data = {
+"RESET": SubResource("Animation_cr1ca"),
+"anim": SubResource("Animation_sj03o")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uc8f"]
+size = Vector2(200, 64)
+
+[node name="gambleminigame" type="Node2D"]
+script = ExtResource("1_7sadh")
+
+[node name="animationplayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jujtv")
+}
+
+[node name="tile" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("1_pkayu")
+
+[node name="tile2" type="Sprite2D" parent="."]
+position = Vector2(100, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("1_pkayu")
+
+[node name="tile3" type="Sprite2D" parent="."]
+position = Vector2(168, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("1_pkayu")
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+volume_db = -3.0
+
+[node name="area2d" type="Area2D" parent="."]
+position = Vector2(100, 32)
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="area2d"]
+shape = SubResource("RectangleShape2D_4uc8f")
+
+[connection signal="input_event" from="area2d" to="." method="_on_area_2d_input_event"]

@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8f1fskk8itwf"]
+
+[ext_resource type="Theme" uid="uid://hmw2c6ssw4h6" path="res://theme.tres" id="1_kly6j"]
+[ext_resource type="Script" path="res://thingscount.gd" id="2_dm822"]
+[ext_resource type="PackedScene" uid="uid://naf8sss5og7r" path="res://minigames/thatminigame.tscn" id="3_0s4ha"]
+[ext_resource type="Texture2D" uid="uid://3phfn64o4oyy" path="res://sprites/bg.png" id="4_s1qh0"]
+[ext_resource type="Script" path="res://background.gd" id="5_04mwg"]
+[ext_resource type="PackedScene" uid="uid://d2fiowrfipbxh" path="res://shop.tscn" id="6_gphmm"]
+[ext_resource type="AudioStream" uid="uid://duogsfngiq7np" path="res://music/mus_interesting.ogg" id="8_skwym"]
+
+[sub_resource type="Animation" id="Animation_xtipx"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0tqha"]
+resource_name = "anim"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.560784, 0.560784, 0.768627, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_30oc4"]
+_data = {
+"RESET": SubResource("Animation_xtipx"),
+"anim": SubResource("Animation_0tqha")
+}
+
+[node name="mainscene" type="Node2D"]
+
+[node name="thingscount" type="RichTextLabel" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 142.0
+offset_bottom = 75.0
+theme = ExtResource("1_kly6j")
+bbcode_enabled = true
+text = "things: indeed"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("2_dm822")
+
+[node name="thatminigame" parent="." instance=ExtResource("3_0s4ha")]
+position = Vector2(128, 256)
+
+[node name="background" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture = ExtResource("4_s1qh0")
+centered = false
+script = ExtResource("5_04mwg")
+metadata/_edit_lock_ = true
+
+[node name="animationplayer" type="AnimationPlayer" parent="background"]
+libraries = {
+"": SubResource("AnimationLibrary_30oc4")
+}
+
+[node name="shop" parent="." instance=ExtResource("6_gphmm")]
+position = Vector2(768, 72)
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_skwym")
+volume_db = -3.0
+autoplay = true

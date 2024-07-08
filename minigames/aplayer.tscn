@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgbdxe657nlbg"]
+
+[ext_resource type="Texture2D" uid="uid://dp2m5xlpf4tqh" path="res://sprites/aplayer.png" id="1_0h0ej"]
+[ext_resource type="Script" path="res://minigames/aplayer.gd" id="1_ly3ys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kykr0"]
+size = Vector2(28, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrorh"]
+size = Vector2(4, 28)
+
+[node name="aplayer" type="Node2D"]
+script = ExtResource("1_ly3ys")
+
+[node name="sprite2d" type="Sprite2D" parent="."]
+texture = ExtResource("1_0h0ej")
+centered = false
+
+[node name="playerareadown" type="Area2D" parent="."]
+position = Vector2(16, 34)
+monitorable = false
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="playerareadown"]
+shape = SubResource("RectangleShape2D_kykr0")
+metadata/_edit_lock_ = true
+
+[node name="playerareadown2" type="Area2D" parent="."]
+position = Vector2(16, 66)
+monitorable = false
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="playerareadown2"]
+shape = SubResource("RectangleShape2D_kykr0")
+metadata/_edit_lock_ = true
+
+[node name="playerareaup" type="Area2D" parent="."]
+position = Vector2(16, -2)
+monitorable = false
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="playerareaup"]
+shape = SubResource("RectangleShape2D_kykr0")
+metadata/_edit_lock_ = true
+
+[node name="playerareaup2" type="Area2D" parent="."]
+position = Vector2(16, -34)
+monitorable = false
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="playerareaup2"]
+shape = SubResource("RectangleShape2D_kykr0")
+metadata/_edit_lock_ = true
+
+[node name="playerarealeft" type="Area2D" parent="."]
+position = Vector2(-2, 16)
+monitorable = false
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="playerarealeft"]
+shape = SubResource("RectangleShape2D_nrorh")
+metadata/_edit_lock_ = true
+
+[node name="playerarealeft2" type="Area2D" parent="."]
+position = Vector2(-34, 16)
+monitorable = false
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="playerarealeft2"]
+shape = SubResource("RectangleShape2D_nrorh")
+metadata/_edit_lock_ = true
+
+[node name="playerarearight" type="Area2D" parent="."]
+position = Vector2(34, 16)
+monitorable = false
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="playerarearight"]
+shape = SubResource("RectangleShape2D_nrorh")
+metadata/_edit_lock_ = true
+
+[node name="playerarearight2" type="Area2D" parent="."]
+position = Vector2(66, 16)
+monitorable = false
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="playerarearight2"]
+shape = SubResource("RectangleShape2D_nrorh")
+metadata/_edit_lock_ = true

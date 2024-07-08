@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci8fxwc4y752a"]
+
+[ext_resource type="Texture2D" uid="uid://cbselbiolkpn3" path="res://sprites/abox.png" id="1_7u4ay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u74bq"]
+size = Vector2(28, 28)
+
+[node name="abox" type="Node2D"]
+
+[node name="sprite2d" type="Sprite2D" parent="."]
+texture = ExtResource("1_7u4ay")
+centered = false
+
+[node name="boxarea" type="Area2D" parent="."]
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="boxarea"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_u74bq")
