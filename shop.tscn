@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2fiowrfipbxh"]
+[gd_scene load_steps=5 format=3 uid="uid://d2fiowrfipbxh"]
 
 [ext_resource type="Script" path="res://shop.gd" id="1_qja85"]
 [ext_resource type="Texture2D" uid="uid://w1u0f2v7lrop" path="res://sprites/thiscoolasstriangle.png" id="1_t0gyx"]
 [ext_resource type="Theme" uid="uid://hmw2c6ssw4h6" path="res://theme.tres" id="3_kc7kh"]
+[ext_resource type="Script" path="res://shopbutton.gd" id="4_ijkg3"]
 
 [node name="shop" type="Node2D"]
 script = ExtResource("1_qja85")
@@ -30,8 +31,9 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("3_kc7kh")
 disabled = true
-text = "explodes"
+text = "buy null for just 0 things!"
 icon = ExtResource("1_t0gyx")
 alignment = 0
+script = ExtResource("4_ijkg3")
 
 [connection signal="resized" from="panelcontainer" to="." method="_on_panelcontainer_resized"]

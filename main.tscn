@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8f1fskk8itwf"]
+[gd_scene load_steps=12 format=3 uid="uid://b8f1fskk8itwf"]
 
 [ext_resource type="Theme" uid="uid://hmw2c6ssw4h6" path="res://theme.tres" id="1_kly6j"]
 [ext_resource type="Script" path="res://thingscount.gd" id="2_dm822"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://3phfn64o4oyy" path="res://sprites/bg.png" id="4_s1qh0"]
 [ext_resource type="Script" path="res://background.gd" id="5_04mwg"]
 [ext_resource type="PackedScene" uid="uid://d2fiowrfipbxh" path="res://shop.tscn" id="6_gphmm"]
+[ext_resource type="Script" path="res://shopwindow.gd" id="7_qi3bh"]
 [ext_resource type="AudioStream" uid="uid://duogsfngiq7np" path="res://music/interesting.ogg" id="8_skwym"]
 
 [sub_resource type="Animation" id="Animation_xtipx"]
@@ -51,7 +52,7 @@ _data = {
 [node name="thingscount" type="RichTextLabel" parent="."]
 offset_left = 32.0
 offset_top = 32.0
-offset_right = 142.0
+offset_right = 187.0
 offset_bottom = 75.0
 theme = ExtResource("1_kly6j")
 bbcode_enabled = true
@@ -89,5 +90,8 @@ unresizable = true
 always_on_top = true
 transparent = true
 theme = ExtResource("1_kly6j")
+script = ExtResource("7_qi3bh")
 
 [node name="shop" parent="shopwindow" instance=ExtResource("6_gphmm")]
+
+[connection signal="close_requested" from="shopwindow" to="shopwindow" method="_on_close_requested"]

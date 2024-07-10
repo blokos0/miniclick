@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://0qv750l1smq2"]
+
+[ext_resource type="Script" path="res://minigames/thatblock.gd" id="1_yxnof"]
+[ext_resource type="Texture2D" uid="uid://7wnqwihqyrq6" path="res://sprites/thatblock.png" id="2_0se1u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r28c5"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqk2a"]
+size = Vector2(64, 64)
+
+[node name="thatblock" type="StaticBody2D"]
+position = Vector2(0, -128)
+script = ExtResource("1_yxnof")
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r28c5")
+
+[node name="sprite2d" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_0se1u")
+
+[node name="area2d" type="Area2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="area2d"]
+shape = SubResource("RectangleShape2D_nqk2a")
+
+[connection signal="body_entered" from="area2d" to="." method="_on_area_2d_body_entered"]

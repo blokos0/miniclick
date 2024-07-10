@@ -3,9 +3,7 @@ var alltargets = 0
 var targets = 0
 func _ready():
 	var regex = RegEx.new()
-	regex.compile("atarget[0-9]?+")
-	var results = regex.search_all(str(get_children()))
-	for r in results:
+	for i in find_children("atarget*"):
 		alltargets += 1
 func _process(_delta):
 	if targets == alltargets:

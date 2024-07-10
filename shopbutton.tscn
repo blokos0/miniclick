@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://drs5ucqq5m622"]
+
+[ext_resource type="Theme" uid="uid://hmw2c6ssw4h6" path="res://theme.tres" id="1_0b86d"]
+[ext_resource type="Texture2D" uid="uid://w1u0f2v7lrop" path="res://sprites/thiscoolasstriangle.png" id="2_8dd1u"]
+[ext_resource type="Script" path="res://shopbutton.gd" id="3_e3m13"]
+
+[node name="shopbutton" type="Button"]
+offset_right = 146.0
+offset_bottom = 44.0
+theme = ExtResource("1_0b86d")
+disabled = true
+text = "explodes"
+icon = ExtResource("2_8dd1u")
+alignment = 0
+script = ExtResource("3_e3m13")
