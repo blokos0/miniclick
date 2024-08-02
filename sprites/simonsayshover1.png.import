@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dumgw8gc3wdyv"
-path="res://.godot/imported/gambleicon2.png-0bdade6662e60618352efe9cc46eedd8.ctex"
+uid="uid://bne0yyytuxbcg"
+path="res://.godot/imported/simonsayshover1.png-90d7274cfabca37b0587c5a7485135ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/gambleicon2.png"
-dest_files=["res://.godot/imported/gambleicon2.png-0bdade6662e60618352efe9cc46eedd8.ctex"]
+source_file="res://sprites/simonsayshover1.png"
+dest_files=["res://.godot/imported/simonsayshover1.png-90d7274cfabca37b0587c5a7485135ed.ctex"]
 
 [params]
 

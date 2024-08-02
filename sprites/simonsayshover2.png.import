@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfeq4o371cmkx"
-path="res://.godot/imported/shopbg.png-fc073e72ef9e7ab25db69afedca7ca98.ctex"
+uid="uid://crruwtr6iauo3"
+path="res://.godot/imported/simonsayshover2.png-2742a17a24cada70fc5f6e7d561a57f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/shopbg.png"
-dest_files=["res://.godot/imported/shopbg.png-fc073e72ef9e7ab25db69afedca7ca98.ctex"]
+source_file="res://sprites/simonsayshover2.png"
+dest_files=["res://.godot/imported/simonsayshover2.png-2742a17a24cada70fc5f6e7d561a57f7.ctex"]
 
 [params]
 

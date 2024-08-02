@@ -1,3 +1,3 @@
 extends Sprite2D
-func _ready():
+func _ready() -> void:
 	$animationplayer.play("anim")

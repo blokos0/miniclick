@@ -211,7 +211,7 @@ volume_db = -3.0
 [node name="area2d" type="Area2D" parent="."]
 position = Vector2(100, 32)
 
-[node name="collision_shape_2d" type="CollisionShape2D" parent="area2d"]
+[node name="collisionshape2d" type="CollisionShape2D" parent="area2d"]
 shape = SubResource("RectangleShape2D_4uc8f")
 
 [connection signal="input_event" from="area2d" to="." method="_on_area_2d_input_event"]

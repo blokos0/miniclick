@@ -1,24 +1,29 @@
 class_name ShopButton
 extends Button
-@export var scene = "null"
-@export var cost = 0
-@export var mininame = "null"
-@export var pos = Vector2(0, 0)
-@export var upgrade = false
-func _process(_delta):
-	var act = "buy "
+@export var minigame: int = 0
+@export var upgrade: bool = false
+func _process(_delta: float) -> void:
+	var act: String = "buy "
+	var cost: int = global.minigames["buycost"][minigame]
 	if upgrade:
 		act = "upgrade "
-	text = str(act, mininame, " for just ", cost, " things!")
-func _pressed():
+		cost = global.minigames["upgradecost"][minigame]
+	text = str(act, global.minigames["name"][minigame], " for just ", cost, " things!")
+	icon = load(str("res://sprites/", global.minigames["icon"][minigame], ".png"))
+	if !upgrade && global.minigames["bought"][minigame]:
+		disabled = true
+func _pressed() -> void:
+	var cost: int = global.minigames["buycost"][minigame]
+	if upgrade:
+		cost = global.minigames["upgradecost"][minigame]
 	if global.things >= cost:
 		global.things -= cost
-		if not upgrade:
-			var scenel = load(str("res://minigames/", scene, ".tscn")).instantiate()
-			scenel.position = pos
-			$"/root/mainscene".add_child(scenel)
+		if !upgrade:
+			global.loadminigame(minigame)
 			disabled = true
 			$"../../..".items -= 1
+			global.minigames["bought"][minigame] = true
 		else:
-			$"/root/mainscene".get_node(scene).upgrade()
-			cost = int(cost * 1.5)
+			$"/root/mainscene".get_node(global.minigames["scene"][minigame]).upgrade()
+			global.minigames["upgradecost"][minigame] = int(global.minigames["upgradecost"][minigame] * 1.5)
+			global.minigames["upgradecount"][minigame] += 1

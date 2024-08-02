@@ -1,8 +1,8 @@
 #TODO:
 #so retro minigame
-#minigame upgrades (make an upgrade function in the minigames and call it using new shop buttons)
+#simon says minigame
+#offset minigame
 #sfx
 #just generally more minigames
-#restart button
-#savefiles
+#reset button
 #a simple settings menu perhaps

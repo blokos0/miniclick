@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beh4bo28qm5s0"
-path="res://.godot/imported/gambleicon0.png-665c4623639b36cf79ba3ef54af30a15.ctex"
+uid="uid://dsugegghlfgcs"
+path="res://.godot/imported/kuwi.png-5d89a606ccd69505086749e2c7402580.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/gambleicon0.png"
-dest_files=["res://.godot/imported/gambleicon0.png-665c4623639b36cf79ba3ef54af30a15.ctex"]
+source_file="res://sprites/kuwi.png"
+dest_files=["res://.godot/imported/kuwi.png-5d89a606ccd69505086749e2c7402580.ctex"]
 
 [params]
 
